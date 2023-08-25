@@ -5,8 +5,7 @@ class Solution {
         if( k > len )
             k =  k % len; 
         
-         if (len == k || len == 1)
-                        return ;
+
 
         // 이동해야 하는 앞부분 숫자 복사
         int[] tmp = Arrays.copyOf(nums, len - k);
