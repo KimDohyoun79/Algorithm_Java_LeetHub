@@ -9,7 +9,7 @@ class Solution {
                 continue;
             }
             else
-                profit = Math.max((prices[i] - min), profit);
+                profit = (prices[i] - min) > profit ? (prices[i] - min) : profit;
         }
         return profit;
     }
