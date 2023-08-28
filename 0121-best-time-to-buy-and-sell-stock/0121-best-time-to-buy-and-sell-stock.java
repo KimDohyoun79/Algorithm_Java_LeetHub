@@ -9,8 +9,7 @@ class Solution {
                 continue;
             }
             else
-                profit = (prices[i] - min) > profit ? (prices[i] - min) : profit;
-            System.out.println(profit);
+                profit = Math.max((prices[i] - min), profit);
         }
         return profit;
     }
