@@ -11,7 +11,6 @@ class Solution {
                 for(int j = 1; j <= nums[i] && i + j < len; j++)
                         dp[i + j] = true;   
         
-        
         return dp[len - 1];
     }
 }
