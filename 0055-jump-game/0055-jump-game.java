@@ -8,10 +8,8 @@ class Solution {
         
         for(int i = 0; i < len; i++)
             if(dp[i])
-                for(int j = 1; j <= nums[i]; j++){
-                    if(i + j < len)
+                for(int j = 1; j <= nums[i] && i + j < len; j++)
                         dp[i + j] = true;   
-                }
         
         
         return dp[len - 1];
