@@ -18,7 +18,6 @@ class Solution {
                     map.put(p[i], str[i]);
                 else
                     return false;
-                
             }
         } 
         return true;
