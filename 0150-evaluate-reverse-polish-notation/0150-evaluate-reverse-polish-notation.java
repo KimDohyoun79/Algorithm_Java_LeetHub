@@ -4,6 +4,7 @@ class Solution {
         
         int re = 0;
         for(String c : tokens){
+            int a, b;
             switch(c){
                 case "+" : 
                     stack.push(stack.pop() + stack.pop()); 
@@ -12,12 +13,12 @@ class Solution {
                     stack.push(stack.pop() * stack.pop()); 
                     break;
                 case "-" : 
-                    int a1 = stack.pop(), b1 = stack.pop();
-                    stack.push(b1 - a1); 
+                    a = stack.pop(); b = stack.pop();
+                    stack.push(b - a); 
                     break;
                 case "/" : 
-                    int a2 = stack.pop(), b2 = stack.pop();
-                    stack.push(b2 / a2); 
+                    a = stack.pop(); b = stack.pop();
+                    stack.push(b / a); 
                     break;                 
                 default : stack.push(Integer.parseInt(c)); 
                     break;
@@ -26,4 +27,5 @@ class Solution {
         }
         return stack.pop();
     }
+    
 }
