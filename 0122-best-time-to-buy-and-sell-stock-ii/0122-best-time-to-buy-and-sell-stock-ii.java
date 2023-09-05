@@ -9,7 +9,7 @@ class Solution {
                 min = prices[i]; // 작은 가격 저장
             else{
                 profit += prices[i] - min; // 아니면 현재 가격 - 이전 가격
-                min = i < prices.length - 1 ? prices[i] : 0; // 수익 연산 후 min 초기화, indexoverflow 방지 
+                min = prices[i]; // 수익 연산 후 min 초기화
             }
         }
         return profit;
