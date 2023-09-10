@@ -14,7 +14,6 @@
  * }
  */
 
-import java.util.*;
 class Solution {
     int min = Integer.MAX_VALUE;
     TreeNode preNode = null;
