@@ -16,19 +16,11 @@
 
 import java.util.*;
 class Solution {
-    List<Integer> list;
-
+    int min = Integer.MAX_VALUE;
+    TreeNode preNode = null;
+    
     public int getMinimumDifference(TreeNode root) {
-        list = new ArrayList<>();
-        
         inOrderDfs(root);
-        System.out.println(list);
-
-        int min = Integer.MAX_VALUE;
-        for(int i = 0; i < list.size() - 1; i++){
-            min = Math.min(min, list.get(i+1) - list.get(i));
-        }
-
         return min;
     }
 
@@ -36,7 +28,11 @@ class Solution {
 
         if(node != null){
             inOrderDfs(node.left);
-            list.add(node.val);
+
+            if(preNode != null)
+                min = Math.min(min, node.val - preNode.val);
+            preNode = node;
+            
             inOrderDfs(node.right);
         }
     }
