@@ -17,26 +17,23 @@ class Solution {
     
     int count = 0;
     int kk;
-    int re = 0;
+    int result = 0;
 
     public int kthSmallest(TreeNode root, int k) {
         kk = k;
         inoderDfs(root);
-        return re;
+        return result;
     }
 
     public void inoderDfs(TreeNode node){
 
-        if(node == null)
-            return;
-            
-        inoderDfs(node.left);
-
-        count++;
-        if(count == kk)
-            re = node.val;
-        else
-            inoderDfs(node.right);
-
+        if(node != null){
+            inoderDfs(node.left);
+            count++;
+            if(count == kk)
+                result = node.val;
+            else
+                inoderDfs(node.right);
+        }
     }
 }
